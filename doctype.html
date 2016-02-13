@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQUERY</title>
+</head>
+<body>
+
+	<h1 class="titulo">Soy un titulo</h1>
+
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+	<a href="index.html" id="enlace">soy un link</a>
+
+	<nav>
+		<ul>
+			<li>
+				<a href="index.html">index</a>
+			</li>
+			<li>
+				<a href="productos.html">productos</a>
+			</li>
+			<li>
+				<a href="contacto.html">contacto</a>
+			</li>
+		</ul>
+	</nav>
+
+</body>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	
+	<script type="text/javascript">
+		$(document).on("ready",function(){
+			var parrfo=$("p");//selecciona la etiqueta (trae el elemento por tipo)
+			var enlace=$("#enlace")//trae el elemento por id jquery
+			var titulo=$(".titulo")//trae el elemento por clase a jquery
+			var linkMenu=$("nav ul li a")// trae elementos al igual que con css 
+			var primerLink=$("#menu ul li a:first")//first trae solo el primer elemento al igual que con firstchild en js
+			var primerLink=$("#menu ul li a:odd")//odd trae todos los elementos impares
+
+			if(titulo.length){
+				alert("hay un titulo")
+			}
+
+			//refinamiento de busqueda
+
+			$("nav ul li").has("a")//has / tiene
+			$("h1").not(".titulo");//tra el que no tiene la clase titulo
+			//$("h1").current("titulo") // trae todos los h1 y selecciona solo el de la clase titulo
+			$("nav ul li").first()//trae el primer elemnto 
+			$("nav ul li").eq(2)//trae un elemnto especifico (cuenta desde 0)
+			$(".container").find("h3").eq(1)//encuentra todos los h3 y tarae el 2do elemento de los h3 encontrados
+
+			alert($(".titulo").html());//se pone html porque llama al elemnto que esta dentor del html
+			//alert($(titulo.html());//se llama a la variable que se declaro antes
+
+			$(".titulo").html("Soy el nuevo tiutlo")// es lo mismo que decir  titulo.html("soy el nuevo titulo")// esto reemplaza el texto
+
+		})//signo pesos para que entienda que es jquery y done para que entienda que termina
+	</script>
+
+</html>

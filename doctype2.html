@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQUERY2</title>
+	<style type="text/css">
+		.cuadrado{
+			width:100px;
+			height:100px;
+			background:red;
+		}
+		.destacado{
+			background:yellow;
+		}
+	</style>
+</head>
+<body>
+	<h1>Soy un titulo</h1>
+
+	<button id="aumentar">+</button>	<button id="achicar">-</button>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+
+		<a href="http://www.google.com" target="_blank" id="buscador">Google</a>
+		<div class="cuadrado"></div>
+
+	<hr>
+			<input	type="text" placeholder="Tu nombre" id="nombre">
+			<button id="saludo">Saludar</button>
+</body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).on("ready",function(){
+			$("#saludo").on("click",function(){
+				nombre=$("#nombre").val(); //retorna un valor ingresado
+				alert("Hola" + " " + nombre)
+			})
+
+			alert($("h1").css("fontSize"));//dice que porpiedad tiene el elemnto de csss
+			$("h1").css("fontSize","8px")
+
+			$("#aumentar").on("click",function(){
+				$("p").css("fontSize","+=5px")
+			})
+			$("#achicar").on("click",function(){
+				$("p").css("fontSize","-=5px")
+			})
+
+			$("h1").css("fontSize","+=2px");
+
+			var cuadrado=$(".cuadrado")
+			alert(cuadrado.width())
+			alert(cuadrado.height())
+/*
+			cuadrado.width("200px")
+			cuadrado.height("30px")
+
+			cuadrado.css("background","blue")
+*/
+
+	//JSON
+		$(".cuadrado").css({
+			"background":"blue",
+			"width":"55px",
+			"height":"80px"
+		})
+
+	// FIN JSON
+
+		alert($("#buscador").attr("href"))//lee o setea atributos de las etiquetas
+		$("#buscador").attr("href","http://www.bing.com")
+
+	//JSON
+		$("#buscador").attr({
+			"name":"link",
+			"class":"enlace",		
+		})
+	// FIN JSON
+/*		$("h1").addClass("destacado")
+
+		alert("freno")
+
+		$("h1").removeClass("destacado")
+*/
+		$("h1").on("click",function(){
+			$(this).toggleClass("destacado");//this solo selecciona ese elemnto, si tuviese varios h1 seleccionaria solo el que dice this y no otro elemnto dentro de la clase
+		})
+
+		})
+</script>
+
+</html>

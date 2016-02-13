@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQUERY2</title>
+</head>
+<body>
+   <img class="grande" src="http://www.losabes.com/wp-content/uploads/2015/07/Las-10-Razas-de-Perros-M%C3%A1s-Tiernas-5-500x500.jpg" onclick="destacado()" id="grande">
+
+  </br>
+
+    <img src="http://www.losabes.com/wp-content/uploads/2015/07/Las-10-Razas-de-Perros-M%C3%A1s-Tiernas-5-500x500.jpg" class="thumbnail" onclick="agrandar(this)">
+
+    <img src="http://diariomovil.com.ar/wp-content/uploads/2016/01/17609-500x500.jpg" class="thumbnail" onclick="agrandar(this)">
+
+    <img src="http://www.okchicas.com/wp-content/uploads/2015/03/cosas-cursis-que-haces-por-tus-perros-8.jpg" class="thumbnail" onclick="agrandar(this)">
+
+    <img src="http://www.mundoperro.net/wp-content/uploads/normas-perro-coche.jpg" class="thumbnail" onclick="agrandar(this)">
+</body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+	<script type="text/javascript">
+
+		$(document).on("ready",function(){
+			$("img").on("click",function(){
+			$(this).toggleClass("destacado");//this solo selecciona ese elemnto, si tuviese varios h1 seleccionaria solo el que dice this y no otro elemnto dentro de la clase
+
+		})
+
+	</script>
+
+</html>
